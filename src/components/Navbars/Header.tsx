@@ -295,7 +295,7 @@ const Header = () => {
               )}
             </div>
           </div>
-          <div className="relative h-10">
+          <div className="relative w-full h-10">
             <input
               type="text"
               placeholder="Search items..."

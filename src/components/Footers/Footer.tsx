@@ -196,7 +196,11 @@ const Footer = () => {
 
           <div className="grid grid-cols-2 xs:grid-cols-3 gap-6 sm:gap-8 w-full pt-3">
             {footerData.map((section, index) => (
-              <div key={index} className="flex flex-col gap-2 sm:gap-5 w-full">
+              <div
+                key={index}
+                className={`flex flex-col gap-2 sm:gap-5 w-full ${
+                  index === 2 ? "col-span-2 xs:col-span-1" : "col-span-1"
+                }`}>
                 <span className="text-black font-medium text-sm sm:text-base leading-[1.6]">
                   {section.title}
                 </span>
