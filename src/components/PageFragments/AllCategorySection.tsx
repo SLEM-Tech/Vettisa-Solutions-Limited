@@ -266,7 +266,7 @@ const AllCategorySection = () => {
                         : "N/A"}
                       </span>
                       {oldPrice && oldPrice > price && (
-                        <span className="text-xs text-gray-500 line-through">
+                        <span className="text-xs text-gray-500 lg:flex hidden items-center gap-1 line-through">
                           <FormatMoney2 value={oldPrice} />
                         </span>
                       )}

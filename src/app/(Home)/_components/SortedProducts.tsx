@@ -151,7 +151,7 @@ const SortedProducts = () => {
                         : "N/A"}
                       </span>
                       {oldPrice && oldPrice > price && (
-                        <span className="text-xs text-gray-500 line-through">
+                        <span className="text-xs text-gray-500 lg:flex hidden items-center gap-1 line-through">
                           <FormatMoney2 value={oldPrice} />
                         </span>
                       )}
@@ -250,7 +250,7 @@ const SortedProducts = () => {
                       <div className="flex flex-col gap-1">
                         <StarRating rating={rating} />
                         {oldPrice && oldPrice > price && (
-                          <span className="text-xs text-gray-500 line-through">
+                          <span className="text-xs text-gray-500 lg:flex hidden items-center gap-1 line-through">
                             <FormatMoney2 value={oldPrice} />
                           </span>
                         )}
