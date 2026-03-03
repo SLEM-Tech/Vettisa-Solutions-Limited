@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import { motion } from "framer-motion";
 import FooterCard from "../Cards/FooterCard";
 import Link from "next/link";
 import { ChatServiceIconSvg, FileIconSvg, RocketIconSvg } from "../SvgIcons";
@@ -10,12 +9,6 @@ import { CompanyName, filterCustomersByEmail } from "@constants";
 import { useCustomer } from "../lib/woocommerce";
 import { LogoImage } from "@utils/function";
 import { usePathname } from "next/navigation";
-import {
-  BiLogoFacebook,
-  BiLogoLinkedin,
-  BiLogoTiktok,
-  BiLogoWhatsapp,
-} from "@node_modules/react-icons/bi";
 
 interface footerDataProps {
   title: string;
@@ -35,26 +28,6 @@ const Footer = () => {
   const wc_customer_info: Woo_Customer_Type | undefined =
     filterCustomersByEmail(wc_customer2_info, email);
   const firstName = wc_customer_info?.first_name;
-  const footer1socialMediaIcons = [
-    {
-      id: 1,
-      icon: <BiLogoTiktok className="text-2xl sm:text-3xl text-white" />,
-      link: "",
-      backgroundColor: "bg-gray-900",
-    },
-    {
-      id: 2,
-      icon: <BiLogoWhatsapp className="text-2xl sm:text-3xl text-white" />,
-      link: "",
-      backgroundColor: "bg-whatsapp",
-    },
-    // {
-    // 	id: 2,
-    // 	icon: <Iconbi.BiLogoTwitter className='text-lg sm:text-2xl text-white' />,
-    // 	link: "#",
-    // 	backgroundColor: "bg-[#3CF]",
-    // },
-  ];
 
   const footerCardData = [
     {
@@ -121,29 +94,12 @@ const Footer = () => {
     />
   ));
 
-  const staggerDelay = 0.2;
-
   return (
     <footer className="bg-background w-full py-2 flex flex-col item-center">
       <div className="mx-auto max-w-[1400px] w-full hidden slg:block">
         <section className="flex justify-center gap-16 mt-2">
           <div className="flex flex-col gap-4 w-[80%]">
-            <LogoImage className="!w-[20px] lg:!w-[30px] rounded-sm" />
-
-            <div className="flex gap-1">
-              {footer1socialMediaIcons.map((item, index) => (
-                <motion.a
-                  href={item.link}
-                  key={index}
-                  className={`p-1 rounded-full ${item.backgroundColor} transition-[.5] hover:!-translate-y-1 hover:scale-110`}
-                  initial={{ opacity: 0, scale: 1 }} // Initial position (opacity 0, y-axis offset 20px, and slightly smaller)
-                  animate={{ opacity: 1, scale: 0.8 }} // Target position (fully opaque, no offset, and original size)
-                  transition={{ delay: index * staggerDelay, duration: 0.5 }} // Stagger the animation delay based on index and set duration
-                >
-                  {item.icon}
-                </motion.a>
-              ))}
-            </div>
+            <LogoImage className="!w-[50px] lg:!w-[60px] rounded-sm" />
           </div>
 
           <div className="flex gap-4 w-full pt-3">
@@ -175,22 +131,7 @@ const Footer = () => {
         <section className="flex flex-col justify-between gap-1 sm:gap-6 mt-2 px-2 xs:px-6 sm:px-10">
           <div className="flex w-full justify-between items-end gap-4">
             <div className="">
-              <LogoImage className="!w-[30px] lg:!w-[30px]" />
-            </div>
-
-            <div className="flex gap-1 h-fit">
-              {footer1socialMediaIcons.map((item, index) => (
-                <motion.a
-                  href={item.link}
-                  key={index}
-                  className={`p-1 rounded-full ${item.backgroundColor} transition-[.5] hover:!-translate-y-1 hover:scale-110`}
-                  initial={{ opacity: 0, scale: 1 }} // Initial position (opacity 0, y-axis offset 20px, and slightly smaller)
-                  animate={{ opacity: 1, scale: 0.8 }} // Target position (fully opaque, no offset, and original size)
-                  transition={{ delay: index * staggerDelay, duration: 0.5 }} // Stagger the animation delay based on index and set duration
-                >
-                  {item.icon}
-                </motion.a>
-              ))}
+              <LogoImage className="!w-[40px] lg:!w-[50px]" />
             </div>
           </div>
 

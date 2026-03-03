@@ -113,6 +113,9 @@ const Header = () => {
       <header className="flex flex-col w-full bg-[#1a1a1a] z-[100] fixed top-0 shadow-lg transition-all">
         {/* Desktop Header */}
         <div className="hidden slg:flex items-center justify-between w-full py-4 max-w-[1440px] px-8 mx-auto">
+          {/* Logo */}
+          <LogoImage className="!w-[40px]" />
+
           {/* Center Nav Links */}
           <nav className="flex items-center gap-8 flex-1 justify-center">
             {headerNavLinks.map((link) => (
